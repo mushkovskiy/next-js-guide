@@ -1,9 +1,3 @@
-import ToggleableListView from '@/components/toggleable-llst-view/toggleable-llst-view';
+import { ToggleableRacketListView } from '@/components/toggleable-racket-llst-view/toggleable-racket-llst-view';
 
-const Page = () => {
-  return (
-    <ToggleableListView />
-  );
-};
-
-export default Page;
+export default ToggleableRacketListView;

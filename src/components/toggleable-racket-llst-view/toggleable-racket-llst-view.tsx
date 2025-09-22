@@ -5,7 +5,7 @@ import Carousel from '../../../shared/components/carousel';
 import ListView from '../../../shared/components/list-view';
 import { rackets } from '../../../mocks/mock-data';
 
-const ToggleableListView = () => {
+export const ToggleableRacketListView = () => {
   const [view, setView] = useState<'list' | 'carousel'>('carousel');
   return (
     <div className="flex flex-col gap-6">
@@ -26,5 +26,3 @@ const ToggleableListView = () => {
     </div>
   );
 };
-
-export default ToggleableListView;

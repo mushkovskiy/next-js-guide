@@ -1,13 +1,11 @@
-'use client';
 import Image from 'next/image';
 import { TRacket } from '../../mocks/mock-data-type';
-import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export const CarouselCard = ({ item }: { item: TRacket }) => {
-  const router = useRouter();
   return (
-    <div
-      onClick={() => router.push(`/racket/${item.id}`)}
+    <Link
+      href={`/racket/${item.id}`}
       key={item.id}
       className="w-[240px] border border-gray-200 rounded overflow-hidden bg-white">
       <div className="w-full h-[180px] bg-gray-100 flex items-center justify-center">
@@ -32,6 +30,6 @@ export const CarouselCard = ({ item }: { item: TRacket }) => {
           {item.price}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

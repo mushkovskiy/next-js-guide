@@ -1,12 +1,11 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { rackets as racketsData } from '../../mocks/mock-data';
 import { TRacket } from '../../mocks/mock-data-type';
 import { CarouselCard } from './carousel-card';
 
 type CarouselProps = {
-  items?: TRacket[];
+  items: TRacket[];
   visibleCount?: number;
 };
 
@@ -17,7 +16,7 @@ const clampIndex = (index: number, length: number) => {
 };
 
 const Carousel = ({ items, visibleCount = 3 }: CarouselProps) => {
-  const data = items ?? racketsData;
+  const data = items;
   const [startIndex, setStartIndex] = useState(0);
 
   const canPaginate = data.length > visibleCount;
@@ -34,6 +33,17 @@ const Carousel = ({ items, visibleCount = 3 }: CarouselProps) => {
     return [...data.slice(startIndex), ...data.slice(0, overflow)];
   }, [data, startIndex, visibleCount]);
 
+  const getVisibleCount = () => {
+    if (data.length === 0) return [] as TRacket[];
+    if (data.length <= visibleCount) return data;
+
+    const end = startIndex + visibleCount;
+    if (end <= data.length) {
+      return data.slice(startIndex, end);
+    }
+    const overflow = end - data.length;
+    return [...data.slice(startIndex), ...data.slice(0, overflow)];
+  };
   const goNext = () => {
     if (!canPaginate) return;
     setStartIndex((prev) => clampIndex(prev + visibleCount, data.length));
@@ -57,7 +67,7 @@ const Carousel = ({ items, visibleCount = 3 }: CarouselProps) => {
           </svg>
         </button>
         <div className="flex gap-4">
-          {visibleItems.map((item) => (
+          {getVisibleCount().map((item) => (
             <CarouselCard key={item.id} item={item} />
           ))}
         </div>
