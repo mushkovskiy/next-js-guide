@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { TRacket } from '../../mocks/mock-data-type';
 import { CarouselCard } from './carousel-card';
+import { ListCard } from './list-card';
 
 type CarouselProps = {
   items: TRacket[];
@@ -68,7 +69,7 @@ const Carousel = ({ items, visibleCount = 3 }: CarouselProps) => {
         </button>
         <div className="flex gap-4">
           {getVisibleCount().map((item) => (
-            <CarouselCard key={item.id} item={item} />
+            <ListCard key={item.id} item={item} />
           ))}
         </div>
         <button
