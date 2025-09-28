@@ -8,7 +8,6 @@ interface Top10ListViewProps {
 const Top10ListView = ({ items }: Top10ListViewProps) => {
   return (
     <div className="w-full">
-      {/* Спокойный заголовок */}
       <div className="mb-8">
         <div className="flex items-center mb-4">
           <div className="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full mr-3">

@@ -13,7 +13,7 @@ const SkeletonCard = () => {
 
 const SidebarSkeleton = () => {
   return (
-    <aside style={{ width: 220, padding: 16, borderRight: '1px solid #e5e7eb' }} className="animate-pulse">
+    <aside className="w-[220px] p-4 border-r border-gray-200 animate-pulse">
       <div className="font-bold mb-3 h-5 bg-gray-200 rounded w-16"></div>
       <nav className="flex flex-col gap-2">
         {Array.from({ length: 3 }).map((_, index) => (
@@ -38,7 +38,7 @@ const MainContentSkeleton = () => {
 
 export const RacketsPageFallback = () => {
   return (
-    <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>
+    <div className="flex gap-6 items-start">
       <SidebarSkeleton />
       <MainContentSkeleton />
     </div>

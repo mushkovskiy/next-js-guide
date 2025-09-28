@@ -8,6 +8,7 @@ const Header = () => {
         <nav className="flex gap-6">
           <NavigationLink href="/">Home</NavigationLink>
           <NavigationLink href="/rackets">Rackets</NavigationLink>
+          <NavigationLink href="/rackets/top-10">Top 10</NavigationLink>
         </nav>
       </div>
     </header>
