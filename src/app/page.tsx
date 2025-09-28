@@ -1,3 +1,23 @@
-import { ToggleableRacketListView } from '@/components/toggleable-racket-llst-view/toggleable-racket-llst-view';
+import { ToggleableRacketListContainer } from '@/containers/toggleable-racket-llst/toggleable-racket-llst';
+import { Top10RacketListContainer } from '@/containers/top-10-racket-list-container/top-10-racket-list-container';
+import { Suspense } from 'react';
+import { ToggleableRacketListFallback } from '../../shared/components/toggleable-racket-list-fallback';
+import { Top10RacketListFallback } from '../../shared/components/top-10-racket-list-fallback';
+import { getTop10Rackets } from '@/services/get-top-10-rackets';
+import { getRackets } from '@/services/get-rackets';
 
-export default ToggleableRacketListView;
+const HomePage = () => {
+  const top10RacketsPromise =  getTop10Rackets();
+  const racketsPromise =  getRackets({ page: 1, limit: 10 });
+  return (
+    <>
+      <Suspense fallback={<Top10RacketListFallback />}>
+        <Top10RacketListContainer  top10RacketsPromise={top10RacketsPromise}/>
+      </Suspense>
+      <Suspense fallback={<ToggleableRacketListFallback />}>
+        <ToggleableRacketListContainer racketsPromise={racketsPromise}/>
+      </Suspense>
+    </>
+  );
+};
+export default HomePage;

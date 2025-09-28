@@ -1,19 +1,25 @@
 import Racket from '@/components/racket/racket';
-import { TRacket } from '../../../../mocks/mock-data-type';
-import { rackets } from '../../../../mocks/mock-data';
+import { getRacketById } from '@/services/get-racket-by-id';
+import { notFound } from 'next/navigation';
 
 type Props = {
   params: Promise<{ id: string }>;
 };
-export const generateStaticParams = async () => {
-  return [{ id: '1' }, { id: '2' }, { id: '3' }];
-};
+
 const RacketPage = async ({ params }: Props) => {
   const { id } = await params;
-  const racket = rackets.find((racket): racket is TRacket => racket.id == Number(id));
+  const { data, isError } = await getRacketById({ id });
+
+  if (isError) {
+    return 'error';
+  }
+
+  if (!data) {
+    return notFound();
+  }
   return (
     <div>
-      {racket && <Racket racket={racket} />}
+      <Racket racket={data} />
     </div>
   );
 };
