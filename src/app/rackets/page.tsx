@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import ListView from '../../../shared/components/list-view';
 import { getRackets } from '@/services/get-rackets';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Rackets Page',
+  description: 'Rackets page',
+};  
 
 const RacketsPage = async () => {
   const { data, isError } = await getRackets({ page: 1, limit: 20 });

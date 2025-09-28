@@ -12,7 +12,9 @@ export const getRackets = async ({
 }: Params): Promise<Response<TRacket[]>> => {
   
   const result = await fetch(
-    `http://localhost:4000/api/products?page=${page}&limit=${limit}`,
+    `http://localhost:4000/api/products?page=${page}&limit=${limit}`, {
+    
+    }
   
   );
 
