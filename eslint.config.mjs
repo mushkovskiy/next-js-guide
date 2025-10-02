@@ -41,7 +41,6 @@ const eslintConfig = [
       '@stylistic': stylistic,
     },
     rules: {
-      'eslint linebreak-style': ['error', 'windows'],
       // Запятая в конце многострочных литералов
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       // Put JSX closing bracket directly after the last prop

@@ -5,7 +5,12 @@ import { ToggleableRacketListFallback } from '../../shared/components/toggleable
 import { Top10RacketListFallback } from '../../shared/components/top-10-racket-list-fallback';
 import { getTop10Rackets } from '@/services/get-top-10-rackets';
 import { getRackets } from '@/services/get-rackets';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Home page',
+  description: 'Home page',
+};
 const HomePage = () => {
   const top10RacketsPromise =  getTop10Rackets();
   const racketsPromise =  getRackets({ page: 1, limit: 10 });
