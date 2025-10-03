@@ -1,4 +1,4 @@
-import { RacketPageFallback } from '../../../../shared/components/racket-page-fallback';
+import { RacketPageFallback } from '../../../../../shared/components/racket-page-fallback';
 
 const RacketPageLoading = () => {
   return (

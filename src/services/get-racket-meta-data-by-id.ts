@@ -1,6 +1,5 @@
-
-import { Response } from "@/types/response";
-import { TRacket } from "@/types/racket";
+import { Response } from '@/types/response';
+import { TRacket } from '@/types/racket';
 
 type Params = {
   id: string;
