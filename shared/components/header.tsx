@@ -1,8 +1,8 @@
 'use client';
 import { use } from 'react';
 import { NavigationLink } from './navigation-link';
-import { UserContext } from '@/app/providers/user-provider';
 import Logout from '@/components/logout/logout';
+import { UserContext } from '@/app/providers/user/user-provider';
 
 const Header = () => {
   const { user } = use(UserContext);
