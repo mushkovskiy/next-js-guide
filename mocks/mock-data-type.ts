@@ -13,4 +13,12 @@ export type TRacket = {
     id: number;
     name: string;
   };
+  userData?: {
+    isFavorite?: boolean;
+    productId: number;
+  }[] | {
+    isFavorite?: boolean;
+    productId: number;
+  };
+
 };

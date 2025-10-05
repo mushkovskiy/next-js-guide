@@ -1,5 +1,6 @@
 import { TRacket } from '@/types/racket';
 import { Response } from '@/types/response';
+import { cookies } from 'next/headers';
 
 interface Params {
   page?: number;
@@ -10,12 +11,15 @@ export const getRackets = async ({
   page = 1,
   limit = 2,
 }: Params): Promise<Response<TRacket[]>> => {
-  console.log('getRackets');
+  const cookieStore = await cookies();
   const result = await fetch(
     `http://localhost:4000/api/products?page=${page}&limit=${limit}`, {
-    
-    }
-  
+      credentials: 'include',
+      headers: {
+        Cookie: cookieStore.toString(),
+      },
+    },
+
   );
 
   if (!result.ok) {

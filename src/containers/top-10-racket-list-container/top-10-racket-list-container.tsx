@@ -4,7 +4,7 @@ import { use } from 'react';
 import { Response } from '@/types/response';
 import { notFound } from 'next/navigation';
 
-export const Top10RacketListContainer =  ({ top10RacketsPromise }: { top10RacketsPromise: Promise<Response<TRacket[]>> }) => {
+export const Top10RacketListContainer = ({ top10RacketsPromise }: { top10RacketsPromise: Promise<Response<TRacket[]>> }) => {
   const { data, isError } = use(top10RacketsPromise);
 
   if (isError) {
