@@ -14,7 +14,6 @@ export const generateMetadata = async ({ params }: Props) => {
   if (!data) {
     return {
       title: 'Racket page',
-     
     };
   }
   return {

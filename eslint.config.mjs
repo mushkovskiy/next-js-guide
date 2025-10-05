@@ -55,7 +55,7 @@ const eslintConfig = [
         'error',
         { anonymous: 'never', named: 'never', asyncArrow: 'always' },
       ],
-      '@stylistic/linebreak-style': ['error', 'windows'],
+
       '@stylistic/space-infix-ops': 'error',
       '@stylistic/space-in-parens': ['error', 'never'],
       '@stylistic/keyword-spacing': ['error', { before: true, after: true }],
@@ -63,7 +63,6 @@ const eslintConfig = [
       '@stylistic/no-trailing-spaces': 'error',
       '@stylistic/no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0, maxBOF: 0 }],
       '@stylistic/eol-last': ['error', 'always'],
-      '@stylistic/linebreak-style': ['error', 'unix'],
       // Кавычки/точки с запятой
       '@stylistic/quotes': ['error', 'single', { avoidEscape: true }],
       '@stylistic/semi': ['error', 'always'],

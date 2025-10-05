@@ -1,6 +1,4 @@
 import NextTopLoader from 'nextjs-toploader';
-import Footer from '../../shared/components/footer';
-import Header from '../../shared/components/header';
 import './globals.css';
 
 export default function RootLayout({
@@ -12,13 +10,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <NextTopLoader showSpinner={false} />
-        <div className="flex flex-col min-h-screen bg-gray-50">
-          <Header />
-          <main className="flex-1 max-w-7xl mx-auto w-full px-6 py-8">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
 

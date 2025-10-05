@@ -1,5 +1,6 @@
 import { TRacket } from '@/types/racket';
 import { Response } from '@/types/response';
+import { cookies } from 'next/headers';
 
 interface Params {
   id: string;
@@ -8,7 +9,13 @@ interface Params {
 export const getRacketById = async ({
   id,
 }: Params): Promise<Response<TRacket>> => {
-  const result = await fetch(`http://localhost:4000/api/product/${id}`);
+  const cookieStore = await cookies();
+  const result = await fetch(`http://localhost:4000/api/product/${id}`, {
+    credentials: 'include',
+    headers: {
+      Cookie: cookieStore.toString(),
+    },
+  });
 
   if (result.status === 404) {
     return { isError: false, data: undefined };
