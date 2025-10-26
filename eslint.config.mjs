@@ -79,7 +79,7 @@ const eslintConfig = [
       '@stylistic/max-len': [
         'warn',
         {
-          code: 100,
+          code: 120,
           ignoreComments: true,
           ignoreStrings: true,
           ignoreTemplateLiterals: true,

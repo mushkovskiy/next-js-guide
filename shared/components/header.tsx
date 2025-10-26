@@ -15,6 +15,7 @@ const Header = () => {
           <NavigationLink href="/">Home</NavigationLink>
           <NavigationLink href="/rackets">Rackets</NavigationLink>
           <NavigationLink href="/rackets/top-10">Top 10</NavigationLink>
+          <NavigationLink href="/racket-client/1">Racket Client</NavigationLink>
         </nav>
         {user ? <Logout /> : <NavigationLink href="/signup">Sign Up</NavigationLink>}
       </div>

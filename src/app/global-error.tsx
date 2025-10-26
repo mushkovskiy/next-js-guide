@@ -1,16 +1,16 @@
-'use client'
+'use client';
 
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
 interface GlobalErrorProps {
-  error: Error & { digest?: string }
-  reset: () => void
+  error: Error & { digest?: string };
+  reset: () => void;
 }
 
 export default function GlobalError({ error, reset }: GlobalErrorProps) {
   useEffect(() => {
-    console.error('Global error caught:', error)
-  }, [error])
+    console.error('Global error caught:', error);
+  }, [error]);
 
   return (
     <html>
@@ -23,14 +23,12 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
                   className="h-8 w-8 text-red-600"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
+                  stroke="currentColor">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
-                  />
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
                 </svg>
               </div>
               <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -51,7 +49,9 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
                 </p>
                 {error.digest && (
                   <p className="text-xs text-red-600 mt-2">
-                    ID ошибки: {error.digest}
+                    ID ошибки:
+                    {' '}
+                    {error.digest}
                   </p>
                 )}
               </div>
@@ -60,15 +60,13 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             <div className="space-y-3">
               <button
                 onClick={reset}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-              >
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                 Попробовать снова
               </button>
-              
+
               <button
                 onClick={() => window.location.href = '/'}
-                className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
-              >
+                className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-4 rounded-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
                 Вернуться на главную
               </button>
             </div>
@@ -82,5 +80,5 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
         </div>
       </body>
     </html>
-  )
+  );
 }

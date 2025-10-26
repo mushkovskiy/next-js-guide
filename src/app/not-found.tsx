@@ -22,31 +22,28 @@ export default function NotFound() {
             Oops! Page Not Found
           </h1>
           <p className="text-gray-600 text-lg leading-relaxed">
-            The racket you're looking for seems to have gone out of bounds. 
-            Don't worry, let's get you back to the court!
+            The racket you are looking for seems to have gone out of bounds.
+            Do not worry, lets get you back to the court!
           </p>
         </div>
 
         {/* Action buttons */}
         <div className="space-y-4">
-          <Link 
+          <Link
             href="/"
-            className="inline-block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
-          >
+            className="inline-block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
             Return to Home Court
           </Link>
-          
+
           <div className="flex gap-3">
-            <Link 
+            <Link
               href="/rackets"
-              className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 px-4 rounded-lg border border-gray-300 transition-colors duration-200 text-sm"
-            >
+              className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 px-4 rounded-lg border border-gray-300 transition-colors duration-200 text-sm">
               Browse Rackets
             </Link>
-            <Link 
+            <Link
               href="/rackets/top-10"
-              className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 px-4 rounded-lg border border-gray-300 transition-colors duration-200 text-sm"
-            >
+              className="flex-1 bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 px-4 rounded-lg border border-gray-300 transition-colors duration-200 text-sm">
               Top 10 Rackets
             </Link>
           </div>
