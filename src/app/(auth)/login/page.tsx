@@ -12,8 +12,6 @@ export default function LoginPage() {
     error: '',
   });
 
-  console.log('🚀 ~ LoginPage ~ error:', error);
-
   useEffect(() => {
     if (redirectTo) {
       location.assign(redirectTo);

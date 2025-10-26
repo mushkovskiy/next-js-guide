@@ -16,7 +16,6 @@ export const loginAction = async (_: LoginState, formData: FormData) => {
     }),
     headers: { 'Content-Type': 'application/json' },
   });
-  console.log('🚀 ~ loginAction ~ result:', result, 'login', login, 'password', password);
 
   if (result.status !== 200) {
     return { error: 'invalid login or password' };
